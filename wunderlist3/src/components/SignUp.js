@@ -1,63 +1,66 @@
-import React, { useState } from 'react'
-import Button from './Button'
-import { axiosWithAuth } from "../utils/axiosWithAuth"
+import React, { useState } from "react";
+import Button from "./Button";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const SignupScreen = (props) => {
+const SignupScreen = props => {
   const [signUpCred, setsignUpCred] = useState({
-    username: 'peanut',
-     password: '$2a$12$WHH/bbviTGV2/p/vKzk/NuYNxTpWP9M6BlzTAm8LjSczCnCUd7gcS',
-     firstName: 'Alexis',
-    lastName: 'Hill',
-   
-   
-  })
+    username: "",
+    password: "",
+    firstName: "Alexis",
+    lastName: "Hill"
+  });
 
-  const handleChange = (e) => {
-    setsignUpCred({ 
-        ...signUpCred, 
-        [e.target.name]: e.target.value 
+  const handleChange = e => {
+    setsignUpCred({
+      ...signUpCred,
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-    .post('https://wunderlist-backend.herokuapp.com/api/auth/register', signUpCred)
-    .then(res => {
-      props.history.push('/login')
-    })
-    .catch(err => {
-      console.error(err);
-    })
-  }
+      .post(
+        "https://wunderlist-backend.herokuapp.com/api/auth/register",
+        signUpCred
+      )
+      .then(res => {
+        console.log("yoooo====>>>>", res);
+        //props.history.push("/login");
+      })
+      .catch(err => {
+        console.log("errrr====>>>>", err);
+        console.error(err);
+      });
+  };
 
   return (
-    <div className='signup-screen'>
+    <div className="signup-screen">
       <form onSubmit={handleSubmit}>
-        <label htmlFor='username'>
+        <label htmlFor="username">
           Userame
           <input
-            placeholder='username'
+            placeholder="username"
             value={signUpCred.username}
-            name='username'
+            name="username"
             onChange={handleChange}
           />
         </label>
-    
-        <label htmlFor='password'>
+
+        <label htmlFor="password">
           Password
           <input
-            type='password'
-            placeholder='password'
+            type="password"
+            placeholder="password"
             value={signUpCred.password}
-            name='password'
+            name="password"
             onChange={handleChange}
           />
         </label>
-        <button type='submit' buttonText={'Submit'} pathName={''} />
+        <button type="submit">Register</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignupScreen
+export default SignupScreen;
