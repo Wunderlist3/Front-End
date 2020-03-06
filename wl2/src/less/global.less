@@ -1,0 +1,417 @@
+html {
+  font-size: calc(10px + 0.5vw);
+  @media @desktop4k {
+    font-size: calc(10px + 1vw);
+  }
+
+  margin-top: @top-margin;
+  scroll-padding-top: @top-padding;
+  @media @desktop4k {
+    margin-top: calc(@top-margin * 2);
+    scroll-padding-top: calc(@top-padding * 2);
+  }
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+body {
+  margin: @top-margin auto 0;
+  // @media @desktop4k {
+  //   margin-top: calc(@top-margin * 2);
+  // }
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition: all 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  background-image: url("./blob.svg"), url("./blob.svg");
+  background-position: top 950px left -180px, top -350px right -150px;
+  background-size: 66%, 55%;
+  background-repeat: repeat-y, repeat-y;
+
+  @media @desktop4k {
+    background-image: url("./blob.svg"), url("./blob.svg"), url("./blob.svg");
+    background-position: top 950px left -180px, top -320px center,
+      top -1280px right -150px;
+    background-size: 42%, 32%, 39%;
+    background-repeat: repeat-y, repeat-y, repeat-y;
+  }
+}
+
+.inner-container {
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+//modal styles
+.centeredModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modalDiv {
+    background-color: #000000;
+    padding: 32px;
+    margin: 16px;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+
+    .modalInput {
+      border: none;
+      background-color: #000000;
+      font-weight: 600;
+      font-size: 32px;
+      color: white;
+      margin-bottom: 32px;
+      outline: none;
+    }
+  }
+
+  .modalButtonDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .cancelNewListButton {
+      border: none !important;
+      background-color: #000000 !important;
+      color: white !important;
+      font-size: 16px !important;
+      font-weight: 600;
+      margin-right: 16px;
+      padding: 12px 16px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .createNewListButton {
+      background-color: #fce959 !important;
+      color: #1c1c1c !important;
+      border: none !important;
+      font-size: 16px !important;
+      font-weight: 600;
+      padding: 12px 16px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+}
+
+.form-container {
+  margin: calc(50vh - 25vh) auto;
+}
+.close-dialog {
+  position: relative;
+  top: 10px;
+  right: -175px;
+  color: white;
+}
+.main-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  background: black;
+}
+#form-input {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: 0;
+  margin-bottom: 5px;
+}
+#form-input::placeholder {
+  color: white;
+}
+.form-button {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  // margin-top: 60%;
+  text-align: right;
+  padding: 15px;
+}
+
+.formWidth {
+  width: 150px;
+}
+
+.button {
+  cursor: pointer;
+}
+.faIcon {
+  font-size: 24px;
+}
+
+.qpioW {
+  width: 100% !important;
+}
+
+.searchButton {
+  font-size: 2.25rem;
+  @media @desktop4k {
+    font-size: 2rem;
+  }
+}
+.createButton {
+  color: white;
+  background-color: black;
+  padding: 5px 7px;
+  border: 0 solid black;
+  border-radius: 42%;
+  font-size: 2.25rem;
+  @media @desktop4k {
+    font-size: 2rem;
+  }
+}
+
+//search dialog styles
+.search-dialog-container {
+  display: block;
+  border-radius: 10px;
+  background: black;
+  height: 150px;
+  width: 250px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .search-dialog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      border-radius: 8px;
+      padding: 10px 20px;
+      width: 60%;
+      border: none;
+      margin-top: 30px;
+      background: black;
+      color: white;
+      &:focus {
+        outline: none;
+      }
+    }
+    .searchDialogButton {
+      background: black;
+      color: white;
+      border: 1px solid white;
+      border-radius: 4px;
+      width: 50%;
+      margin: 20px 0;
+      padding: 10px 20px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+//reminder dialog styles
+.setReminderDialogContainer {
+  display: block;
+  color: white;
+  border-radius: 10px;
+  background: black;
+  height: 150px;
+  width: 250px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .setReminderDialogForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      border-radius: 8px;
+      padding: 10px 20px;
+      width: 60%;
+      border: none;
+      background: black;
+      color: white;
+      &:focus {
+        outline: none;
+      }
+    }
+    .setReminderDialogButton {
+      background: black;
+      color: white;
+      border: 1px solid white;
+      border-radius: 4px;
+      width: 50%;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+//Register.js and Signin.js styles
+.registerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 3px;
+  font-size: 1.6rem;
+  display: block;
+}
+
+#firstName,
+#lastName,
+#username,
+#password {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  width: 380px;
+}
+
+.signinContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin-bottom: px;
+}
+
+.blackButton {
+  font-size: 2rem;
+  font-weight: bold;
+  background: black;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 15px 20px;
+  width: 380px;
+  border: 2px solid black;
+
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
+
+.termsOfServiceDiv {
+  width: 380px;
+}
+
+.negative-top-margin-adjustment {
+  // https://github.com/css-modules/postcss-icss-values/issues/64#issuecomment-241285628
+  margin-top: calc((@top-margin * 2.5) * -1);
+  @media @desktop4k {
+    margin-top: calc((@top-margin * 4) * -1);
+  }
+}
+
+//WelcomePage.js styles
+.welcomePageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .textDiv {
+    text-align: left;
+  }
+  h1 {
+    text-align: center;
+    font-size: 5.5rem;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: lighter;
+    margin-top: -15px;
+  }
+  .blackButton {
+    font-size: 2rem;
+    font-weight: bold;
+    background: black;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 15px 3px;
+    width: 400px;
+    border: 2px solid black;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .whiteButton {
+    font-size: 2rem;
+    font-weight: bold;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 3px;
+    width: 400px;
+    border: 2px solid black;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+.welcomepage-socialmedia-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2.125rem;
+}

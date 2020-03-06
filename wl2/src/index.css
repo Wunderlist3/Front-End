@@ -1,0 +1,682 @@
+html {
+  font-size: calc(10px + 0.5vw);
+  margin-top: 50px;
+  scroll-padding-top: 50px;
+}
+@media (min-width: 2000px) {
+  html {
+    font-size: calc(10px + 1vw);
+  }
+}
+@media (min-width: 2000px) {
+  html {
+    margin-top: calc(50px * 2);
+    scroll-padding-top: calc(50px * 2);
+  }
+}
+h1 {
+  font-size: 5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+body {
+  margin: 50px auto 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  /* transition: all 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95); */
+  /* background-image: url("./blob.svg"), url("./blob.svg"); */
+  background-color: lightblue;
+  /* background-position: top 950px left -180px, top -350px right -150px; */
+  /* background-size: 66%, 55%; */
+  /* background-repeat: repeat-y, repeat-y; */
+}
+@media (min-width: 2000px) {
+  body {
+    /* background-image: url("./blob.svg"), url("./blob.svg"), url("./blob.svg");
+    background-position: top 950px left -180px, top -320px center, top -1280px right -150px;
+    background-size: 42%, 32%, 39%;
+    background-repeat: repeat-y, repeat-y, repeat-y; */
+  }
+}
+.inner-container {
+  height: 100vh;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.hidden {
+  display: none;
+}
+.centeredModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centeredModal .modalDiv {
+  background-color: #000000;
+  padding: 32px;
+  margin: 16px;
+  border-radius: 10px;
+  color: white;
+  max-width: 600px;
+}
+.centeredModal .modalDiv .modalInput {
+  border: none;
+  background-color: #000000;
+  font-weight: 600;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 32px;
+  outline: none;
+}
+.centeredModal .modalButtonDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.centeredModal .modalButtonDiv .cancelNewListButton {
+  border: none !important;
+  background-color: #000000 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-right: 16px;
+  padding: 12px 16px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.centeredModal .modalButtonDiv .createNewListButton {
+  background-color: #fce959 !important;
+  color: #1c1c1c !important;
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  padding: 12px 16px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.form-container {
+  margin: calc(50vh - 25vh) auto;
+}
+.close-dialog {
+  position: relative;
+  top: 10px;
+  right: -175px;
+  color: white;
+}
+.main-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  background: black;
+}
+#form-input {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border: 0;
+  margin-bottom: 5px;
+}
+#form-input::placeholder {
+  color: white;
+}
+.form-button {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  text-align: right;
+  padding: 15px;
+}
+.formWidth {
+  width: 150px;
+}
+.button {
+  cursor: pointer;
+}
+.faIcon {
+  font-size: 24px;
+}
+.qpioW {
+  width: 100% !important;
+}
+.searchButton {
+  font-size: 2.25rem;
+}
+@media (min-width: 2000px) {
+  .searchButton {
+    font-size: 2rem;
+  }
+}
+.createButton {
+  color: white;
+  background-color: black;
+  padding: 5px 7px;
+  border: 0 solid black;
+  border-radius: 42%;
+  font-size: 2.25rem;
+}
+@media (min-width: 2000px) {
+  .createButton {
+    font-size: 2rem;
+  }
+}
+.search-dialog-container {
+  display: block;
+  border-radius: 10px;
+  background: black;
+  height: 150px;
+  width: 250px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.search-dialog-container .search-dialog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-dialog-container .search-dialog-form input {
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 60%;
+  border: none;
+  margin-top: 30px;
+  background: black;
+  color: white;
+}
+.search-dialog-container .search-dialog-form input:focus {
+  outline: none;
+}
+.search-dialog-container .search-dialog-form .searchDialogButton {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  width: 50%;
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+.search-dialog-container .search-dialog-form .searchDialogButton:hover {
+  opacity: 0.6;
+}
+.setReminderDialogContainer {
+  display: block;
+  color: white;
+  border-radius: 10px;
+  background: black;
+  height: 150px;
+  width: 250px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.setReminderDialogContainer .setReminderDialogForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.setReminderDialogContainer .setReminderDialogForm input {
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 60%;
+  border: none;
+  background: black;
+  color: white;
+}
+.setReminderDialogContainer .setReminderDialogForm input:focus {
+  outline: none;
+}
+.setReminderDialogContainer .setReminderDialogForm .setReminderDialogButton {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+.setReminderDialogContainer .setReminderDialogForm .setReminderDialogButton:hover {
+  opacity: 0.6;
+}
+.registerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+label {
+  text-align: left;
+  margin-bottom: 3px;
+  font-size: 1.6rem;
+  display: block;
+}
+#firstName,
+#lastName,
+#username,
+#password {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  width: 380px;
+}
+.signinContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin-bottom: px;
+}
+.blackButton {
+  font-size: 2rem;
+  font-weight: bold;
+  background: black;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 15px 20px;
+  width: 380px;
+  border: 2px solid black;
+}
+.blackButton:hover {
+  background: white;
+  color: black;
+}
+.termsOfServiceDiv {
+  width: 380px;
+}
+.negative-top-margin-adjustment {
+  margin-top: calc((50px * 2.5) * -1);
+}
+@media (min-width: 2000px) {
+  .negative-top-margin-adjustment {
+    margin-top: calc((50px * 4) * -1);
+  }
+}
+.welcomePageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.welcomePageContainer .textDiv {
+  text-align: left;
+}
+.welcomePageContainer h1 {
+  text-align: center;
+  font-size: 5.5rem;
+}
+.welcomePageContainer h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: lighter;
+  margin-top: -15px;
+}
+.welcomePageContainer .blackButton {
+  font-size: 2rem;
+  font-weight: bold;
+  background: black;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 15px 3px;
+  width: 400px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.welcomePageContainer .blackButton:hover {
+  opacity: 0.7;
+}
+.welcomePageContainer .whiteButton {
+  font-size: 2rem;
+  font-weight: bold;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 3px;
+  width: 400px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.welcomePageContainer .whiteButton:hover {
+  opacity: 0.7;
+}
+.welcomepage-socialmedia-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2.125rem;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  padding-top: 5px;
+  background: linear-gradient(to top, #FFFFFF00, #FFFFFFCC 20%, #FFFFFFFF);
+}
+@media (min-width: 2000px) {
+  header {
+    height: calc(50px * 2.25);
+    padding-top: 0;
+  }
+}
+header .headerCtn {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-around;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: center !important;
+  width: 100%;
+}
+header .title .titleMessage {
+  margin: auto 0;
+  padding-bottom: 0 !important;
+  text-align: left;
+  font-weight: bold;
+  font-size: 2.25rem;
+}
+@media (min-width: 2000px) {
+  header .title .titleMessage {
+    font-size: 2rem;
+  }
+}
+header .title .userPhoto {
+  margin-top: 0;
+  margin-right: 35px;
+}
+header .title .userPhoto img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+}
+@media (min-width: 2000px) {
+  header .title .userPhoto img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.forgotPassword {
+  text-align: right;
+  font-size: 1.5rem;
+}
+.mainContent {
+  width: 80%;
+  margin: 0 auto;
+}
+.noData {
+  width: 90%;
+  margin: 0 auto 112px;
+}
+.noData .welcomeDiv {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.noData .hintDiv {
+  font-size: 24px;
+  font-weight: 400;
+  color: #757575;
+  text-align: left;
+}
+.lists,
+.tasks {
+  margin: 0 32px;
+}
+.lists .myLists,
+.tasks .myLists,
+.lists .myTasks,
+.tasks .myTasks {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.lists .listEntryContainer,
+.tasks .listEntryContainer,
+.lists .taskEntryContainer,
+.tasks .taskEntryContainer {
+  width: 50%;
+  margin: 0 64px 32px;
+}
+.lists .listEntryContainer .listEntryWithArrow,
+.tasks .listEntryContainer .listEntryWithArrow,
+.lists .taskEntryContainer .listEntryWithArrow,
+.tasks .taskEntryContainer .listEntryWithArrow,
+.lists .listEntryContainer .taskEntryWithArrow,
+.tasks .listEntryContainer .taskEntryWithArrow,
+.lists .taskEntryContainer .taskEntryWithArrow,
+.tasks .taskEntryContainer .taskEntryWithArrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.lists .listEntryContainer .listEntryWithArrow .listEntry,
+.tasks .listEntryContainer .listEntryWithArrow .listEntry,
+.lists .taskEntryContainer .listEntryWithArrow .listEntry,
+.tasks .taskEntryContainer .listEntryWithArrow .listEntry,
+.lists .listEntryContainer .taskEntryWithArrow .listEntry,
+.tasks .listEntryContainer .taskEntryWithArrow .listEntry,
+.lists .taskEntryContainer .taskEntryWithArrow .listEntry,
+.tasks .taskEntryContainer .taskEntryWithArrow .listEntry,
+.lists .listEntryContainer .listEntryWithArrow .taskEntry,
+.tasks .listEntryContainer .listEntryWithArrow .taskEntry,
+.lists .taskEntryContainer .listEntryWithArrow .taskEntry,
+.tasks .taskEntryContainer .listEntryWithArrow .taskEntry,
+.lists .listEntryContainer .taskEntryWithArrow .taskEntry,
+.tasks .listEntryContainer .taskEntryWithArrow .taskEntry,
+.lists .taskEntryContainer .taskEntryWithArrow .taskEntry,
+.tasks .taskEntryContainer .taskEntryWithArrow .taskEntry {
+  display: block;
+  margin-right: 16px;
+  text-align: left;
+}
+.lists .listEntryContainer .listEntryWithArrow .listEntry .listEntryTitle,
+.tasks .listEntryContainer .listEntryWithArrow .listEntry .listEntryTitle,
+.lists .taskEntryContainer .listEntryWithArrow .listEntry .listEntryTitle,
+.tasks .taskEntryContainer .listEntryWithArrow .listEntry .listEntryTitle,
+.lists .listEntryContainer .taskEntryWithArrow .listEntry .listEntryTitle,
+.tasks .listEntryContainer .taskEntryWithArrow .listEntry .listEntryTitle,
+.lists .taskEntryContainer .taskEntryWithArrow .listEntry .listEntryTitle,
+.tasks .taskEntryContainer .taskEntryWithArrow .listEntry .listEntryTitle,
+.lists .listEntryContainer .listEntryWithArrow .taskEntry .listEntryTitle,
+.tasks .listEntryContainer .listEntryWithArrow .taskEntry .listEntryTitle,
+.lists .taskEntryContainer .listEntryWithArrow .taskEntry .listEntryTitle,
+.tasks .taskEntryContainer .listEntryWithArrow .taskEntry .listEntryTitle,
+.lists .listEntryContainer .taskEntryWithArrow .taskEntry .listEntryTitle,
+.tasks .listEntryContainer .taskEntryWithArrow .taskEntry .listEntryTitle,
+.lists .taskEntryContainer .taskEntryWithArrow .taskEntry .listEntryTitle,
+.tasks .taskEntryContainer .taskEntryWithArrow .taskEntry .listEntryTitle,
+.lists .listEntryContainer .listEntryWithArrow .listEntry .taskEntryTitle,
+.tasks .listEntryContainer .listEntryWithArrow .listEntry .taskEntryTitle,
+.lists .taskEntryContainer .listEntryWithArrow .listEntry .taskEntryTitle,
+.tasks .taskEntryContainer .listEntryWithArrow .listEntry .taskEntryTitle,
+.lists .listEntryContainer .taskEntryWithArrow .listEntry .taskEntryTitle,
+.tasks .listEntryContainer .taskEntryWithArrow .listEntry .taskEntryTitle,
+.lists .taskEntryContainer .taskEntryWithArrow .listEntry .taskEntryTitle,
+.tasks .taskEntryContainer .taskEntryWithArrow .listEntry .taskEntryTitle,
+.lists .listEntryContainer .listEntryWithArrow .taskEntry .taskEntryTitle,
+.tasks .listEntryContainer .listEntryWithArrow .taskEntry .taskEntryTitle,
+.lists .taskEntryContainer .listEntryWithArrow .taskEntry .taskEntryTitle,
+.tasks .taskEntryContainer .listEntryWithArrow .taskEntry .taskEntryTitle,
+.lists .listEntryContainer .taskEntryWithArrow .taskEntry .taskEntryTitle,
+.tasks .listEntryContainer .taskEntryWithArrow .taskEntry .taskEntryTitle,
+.lists .taskEntryContainer .taskEntryWithArrow .taskEntry .taskEntryTitle,
+.tasks .taskEntryContainer .taskEntryWithArrow .taskEntry .taskEntryTitle {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.lists .listEntryContainer .listEntryWithArrow .listEntry .listEntryCount,
+.tasks .listEntryContainer .listEntryWithArrow .listEntry .listEntryCount,
+.lists .taskEntryContainer .listEntryWithArrow .listEntry .listEntryCount,
+.tasks .taskEntryContainer .listEntryWithArrow .listEntry .listEntryCount,
+.lists .listEntryContainer .taskEntryWithArrow .listEntry .listEntryCount,
+.tasks .listEntryContainer .taskEntryWithArrow .listEntry .listEntryCount,
+.lists .taskEntryContainer .taskEntryWithArrow .listEntry .listEntryCount,
+.tasks .taskEntryContainer .taskEntryWithArrow .listEntry .listEntryCount,
+.lists .listEntryContainer .listEntryWithArrow .taskEntry .listEntryCount,
+.tasks .listEntryContainer .listEntryWithArrow .taskEntry .listEntryCount,
+.lists .taskEntryContainer .listEntryWithArrow .taskEntry .listEntryCount,
+.tasks .taskEntryContainer .listEntryWithArrow .taskEntry .listEntryCount,
+.lists .listEntryContainer .taskEntryWithArrow .taskEntry .listEntryCount,
+.tasks .listEntryContainer .taskEntryWithArrow .taskEntry .listEntryCount,
+.lists .taskEntryContainer .taskEntryWithArrow .taskEntry .listEntryCount,
+.tasks .taskEntryContainer .taskEntryWithArrow .taskEntry .listEntryCount,
+.lists .listEntryContainer .listEntryWithArrow .listEntry .taskEntryDate,
+.tasks .listEntryContainer .listEntryWithArrow .listEntry .taskEntryDate,
+.lists .taskEntryContainer .listEntryWithArrow .listEntry .taskEntryDate,
+.tasks .taskEntryContainer .listEntryWithArrow .listEntry .taskEntryDate,
+.lists .listEntryContainer .taskEntryWithArrow .listEntry .taskEntryDate,
+.tasks .listEntryContainer .taskEntryWithArrow .listEntry .taskEntryDate,
+.lists .taskEntryContainer .taskEntryWithArrow .listEntry .taskEntryDate,
+.tasks .taskEntryContainer .taskEntryWithArrow .listEntry .taskEntryDate,
+.lists .listEntryContainer .listEntryWithArrow .taskEntry .taskEntryDate,
+.tasks .listEntryContainer .listEntryWithArrow .taskEntry .taskEntryDate,
+.lists .taskEntryContainer .listEntryWithArrow .taskEntry .taskEntryDate,
+.tasks .taskEntryContainer .listEntryWithArrow .taskEntry .taskEntryDate,
+.lists .listEntryContainer .taskEntryWithArrow .taskEntry .taskEntryDate,
+.tasks .listEntryContainer .taskEntryWithArrow .taskEntry .taskEntryDate,
+.lists .taskEntryContainer .taskEntryWithArrow .taskEntry .taskEntryDate,
+.tasks .taskEntryContainer .taskEntryWithArrow .taskEntry .taskEntryDate {
+  font-size: 16px;
+  font-weight: 400;
+  color: #757575;
+}
+input.apple-switch {
+  position: relative;
+  appearance: none;
+  outline: none;
+  width: 50px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d9dadc;
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 #ffffff;
+  transition-duration: 200ms;
+}
+input.apple-switch:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+input.apple-switch:checked {
+  border-color: #004bc4;
+  box-shadow: inset 20px 0 0 0 #004bc4;
+}
+input.apple-switch:checked:after {
+  left: 20px;
+  box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+.listItemHeader {
+  padding: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 16px !important;
+}
+.taskTitleInput {
+  border: none;
+  background-color: #000000;
+  font-weight: 600;
+  font-size: 32px;
+  color: black;
+  outline: none;
+  margin-bottom: 56px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+}
+.taskTitleInput::placeholder {
+  color: black;
+}
+.item {
+  text-align: left;
+  margin-left: 50px;
+  font-weight: bold;
+}
+footer {
+  z-index: 10;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  margin: 0 auto;
+}
+@media (min-width: 2000px) {
+  footer {
+    height: calc(75px * 2);
+  }
+}
+.footerListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerItems {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-around;
+  align-content: flex-end;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center !important;
+}
+.copyright {
+  margin: 0 auto;
+  position: relative;
+  bottom: 0.125em;
+}

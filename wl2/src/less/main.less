@@ -1,0 +1,135 @@
+.forgotPassword {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+//MainPage.js
+.mainContent {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.noData {
+  width: 90%;
+  margin: 0 auto 112px;
+  .welcomeDiv {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  .hintDiv {
+    font-size: 24px;
+    font-weight: 400;
+    color: #757575;
+    text-align: left;
+  }
+}
+
+.lists,
+.tasks {
+  margin: 0 32px;
+
+  .myLists,
+  .myTasks {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 32px;  // 56px;
+    text-align: left;
+  }
+
+  .listEntryContainer,
+  .taskEntryContainer {
+    width: 50%;
+    margin: 0 64px 32px;
+
+    .listEntryWithArrow,
+    .taskEntryWithArrow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .listEntry,
+      .taskEntry {
+        display: block;
+        margin-right: 16px;
+        text-align: left;
+
+        .listEntryTitle,
+        .taskEntryTitle {
+          margin-bottom: 8px;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .listEntryCount,
+        .taskEntryDate {
+          font-size: 16px;
+          font-weight: 400;
+          color: #757575;
+        }
+      }
+    }
+  }
+}
+
+// Profile.js styles
+input.apple-switch {
+  position: relative;
+  appearance: none;
+  outline: none;
+  width: 50px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d9dadc;
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 #ffffff;
+  transition-duration: 200ms;
+}
+input.apple-switch:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+input.apple-switch:checked {
+  border-color: @secondary-blue;
+  box-shadow: inset 20px 0 0 0 @secondary-blue;
+}
+input.apple-switch:checked:after {
+  left: 20px;
+  box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+//ListItem.js
+.listItemHeader {
+  padding: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 16px !important;
+}
+.taskTitleInput {
+  border: none;
+  background-color: #000000;
+  font-weight: 600;
+  font-size: 32px;
+  color: black;
+  outline: none;
+  margin-bottom: 56px;
+  text-align: left;
+  background-color: rgba(0,0,0,0);
+}
+.taskTitleInput::placeholder {
+  color: black;
+}
+
+//Item.js
+.item {
+  text-align: left;
+  margin-left: 50px;
+  font-weight: bold;
+}
