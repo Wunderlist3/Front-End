@@ -1,0 +1,35 @@
+footer {
+  z-index: 10;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: @bottom-spacing;
+  @media @desktop4k {
+    height: calc(@bottom-spacing * 2);
+  }
+  margin: 0 auto;
+  // background: linear-gradient(to bottom, #FFFFFF00, #FFFFFFFF);
+}
+
+.footerListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerItems {
+  width: 90%;
+  .flexNav();
+  .flex.justify-content.space-between();
+  // margin-bottom: 0;
+  margin: 0 auto;
+  // margin: 0 32px !important;
+  align-items: center !important;
+}
+
+.copyright {
+  margin: 0 auto;
+  position: relative;
+  bottom: 0.125em;
+}

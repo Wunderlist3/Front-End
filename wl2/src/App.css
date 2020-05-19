@@ -1,0 +1,144 @@
+html {
+  /* min-height: 100% !important; */
+}
+body {
+  /* min-height: 100% !important; */
+}
+
+#root {
+  min-height: 100% !important;
+}
+
+.App {
+  text-align: center;
+  min-height: 100% !important;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.footerItems {
+  margin: 0 32px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  align-items: center !important;
+}
+
+.titleMessage {
+  padding-bottom: 0 !important;
+}
+
+.createListModal {
+  background-color: lightgreen;
+  padding: 32px;
+  margin: 16px;
+  border-radius: 0px;
+  color: white;
+  max-width: 600px;
+}
+
+.listTitleInput {
+  border: none;
+  background-color: lightgreen;
+  font-weight: 600;
+  font-size: 32px;
+  color: black;
+  margin-bottom: 32px;
+  outline: none;
+}
+
+.taskTitleInput {
+  border: none;
+  background-color: #000000;
+  font-weight: 600;
+  font-size: 32px;
+  color: black;
+  outline: none;
+  margin-bottom: 56px;
+  text-align: left;
+  background-color: rgba(0,0,0,0);
+}
+
+.taskTitleInput::placeholder {
+  color: black;
+}
+
+.MuiDialog-paperWidthSm {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.MuiPaper-elevation24 {
+  box-shadow: none !important;
+}
+
+.cancelNewListButton {
+  border: none !important;
+  background-color: #000000 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-right: 16px;
+  padding: 12px 16px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.createNewListButton {
+  background-color: #fce959 !important;
+  color: #1c1c1c !important;
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  padding: 12px 16px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.listItemHeader {
+  padding: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 16px !important;
+}
+
+.headerCtn {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
